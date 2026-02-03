@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const text = input.value.trim();
         
         if (text === "") {
-            alert("Escribe una idea ✨");
+            alert("Escribe tu tarea ✨");
             return;
         }
 
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (e.target.classList.contains('btn-edit')) {
             const span = e.target.closest('li').querySelector('.task-text');
-            const nuevoTexto = prompt("Edita tu idea:", span.innerText);
+            const nuevoTexto = prompt("Edita tu tarea:", span.innerText);
             if (nuevoTexto !== null && nuevoTexto.trim() !== "") {
                 span.innerText = nuevoTexto;
             }

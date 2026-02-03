@@ -6,28 +6,41 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--bg);
-    margin: 0;
+    background-image: url(multimedia/daniele-levis-pelusi-ktjuhp9JxFA-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
+    margin: 0; 
     display: flex;
     flex-direction: column;
+    justify-content: center; 
+    align-items: center;     
     min-height: 100vh;
-    align-items: center;
 }
 
 .container {
     background: var(--white);
     width: 90%;
-    max-width: 400px;
-    margin-top: 50px;
+    max-width: 450px;
     padding: 2rem;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(108, 92, 231, 0.1);
-    flex: 1;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    box-sizing: border-box;
 }
 
-h1 { color: var(--primary); text-align: center; margin-bottom: 20px; }
+h1 { 
+    color: var(--primary); 
+    text-align: center; 
+    margin-bottom: 20px; 
+    font-size: 1.8rem;
+}
 
-.input-group { display: flex; gap: 10px; margin-bottom: 20px; }
+.input-group { 
+    display: flex; 
+    gap: 10px; 
+    margin-bottom: 20px; 
+}
 
 input {
     flex: 1;
@@ -35,6 +48,7 @@ input {
     border: 2px solid #eee;
     border-radius: 12px;
     outline: none;
+    font-size: 1rem;
 }
 
 button#add-btn {
@@ -47,6 +61,12 @@ button#add-btn {
     font-weight: 600;
 }
 
+/* Lista de tareas */
+ul {
+    padding: 0;
+    margin: 0;
+}
+
 li {
     list-style: none;
     background: #f9f9f9;
@@ -56,13 +76,59 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-left: 4px solid var(--primary);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.actions { display: flex; gap: 5px; }
+.task-text {
+    word-break: break-word; /* Evita que textos largos rompan el diseño */
+    margin-right: 10px;
+}
 
-.btn-edit { background: #efecff; color: var(--primary); border: none; padding: 5px 10px; border-radius: 8px; cursor: pointer; }
-.btn-delete { background: #ffeaea; color: #e74c3c; border: none; padding: 5px 10px; border-radius: 8px; cursor: pointer; }
+.actions { 
+    display: flex; 
+    gap: 5px; 
+    flex-shrink: 0; /* Evita que los botones se achiquen */
+}
 
-footer { padding: 20px; text-align: center; }
-footer a { color: var(--primary); text-decoration: none; font-weight: bold; }
+.btn-edit { background: #efecff; color: var(--primary); border: none; padding: 6px 10px; border-radius: 8px; cursor: pointer; }
+.btn-delete { background: #ffeaea; color: #e74c3c; border: none; padding: 6px 10px; border-radius: 8px; cursor: pointer; }
+
+footer { 
+    padding: 20px; 
+    text-align: center; 
+    width: 100%;
+}
+
+.p {
+    color: var(--white);
+    font-size: 1rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+footer a { color: #a29bfe; text-decoration: none; font-weight: bold; }
+
+/* --- SECCIÓN RESPONSIVE PARA TELÉFONOS --- */
+@media (max-width: 480px) { 
+    .container {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    input {
+        font-size: 0.9rem;
+    }
+
+    button#add-btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+
+    .btn-edit, .btn-delete {
+        padding: 5px 8px;
+        font-size: 0.8rem;
+    }
+}
